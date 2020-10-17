@@ -23,8 +23,10 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/user/logout', [App\Http\Controllers\Auth\LoginController::class, 'logoutUser'])->name('user.logout');
+
 Route::get('admin', [AdminController::class, 'index'])->name('admin.home');
 Route::get('admin/login', [AuthAdmin\LoginController::class, 'showLoginForm'])->name('admin.login');
 Route::post('admin/login', [AuthAdmin\LoginController::class, 'login'])->name('admin.login.submit');
+Route::post('admin/logout', [AuthAdmin\LoginController::class, 'logout'])->name('admin.logout');
 
 
